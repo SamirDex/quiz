@@ -1,0 +1,253 @@
+{
+  "singers": [
+    {
+      "id": "1",
+      "name": "Ed Sheeran",
+      "image": "https://www.zeitjung.de/wp-content/uploads/2017/07/ed-sheeran-l%C3%B6scht-twitter-account.jpg",
+      "nationality": "United Kingdom",
+      "age": 31,
+      "genre": "Pop"
+    },
+    {
+      "id": "2",
+      "name": "Beyoncé",
+      "image": "https://people.com/thmb/FuBsElDPK6KjI75OrhoCXdl-0-Q=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(661x0:663x2)/beyonce-3-2000-1-79668175f41a4ed48cab5bb1a8fac128.jpg",
+      "nationality": "United States",
+      "age": 40,
+      "genre": "R&B"
+    },
+    {
+      "id": "3",
+      "name": "Adele",
+      "image": "https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-02/adele-main-jc-220215-7430fb.jpg",
+      "nationality": "United Kingdom",
+      "age": 33,
+      "genre": "Pop"
+    },
+    {
+      "id": "4",
+      "name": "Selena Gomez",
+      "image": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iKp_Tvsd7Feo/v1/-1x-1.jpg",
+      "nationality": "United States",
+      "age": 29,
+      "genre": "Pop"
+    },
+    {
+      "id": "5",
+      "name": "Taylor Swift",
+      "image": "https://daily.jstor.org/wp-content/uploads/2020/09/the_linguistic_evolution_of_taylor_swift_1050x700.jpg",
+      "nationality": "United States",
+      "age": 32,
+      "genre": "Pop"
+    },
+    {
+      "id": "6",
+      "name": "Katy Perry",
+      "image": "https://www.themoviedb.org/t/p/original/8UusJIagRVST2FzfcJQYTjyIQUi.jpg",
+      "nationality": "United States",
+      "age": 37,
+      "genre": "Pop"
+    }
+  ],
+  "meals": [
+    {
+      "id": "1",
+      "name": "Spaghetti Bolognese",
+      "price": 12.99,
+      "ingredients": [
+        "Spaghetti",
+        "Ground Beef",
+        "Tomato Sauce",
+        "Onions",
+        "Garlic",
+        "Parmesan Cheese",
+        "Olive Oil",
+        "Spices"
+      ],
+      "imageLink": "https://i0.wp.com/chefrafaelgonzalez.com/wp-content/uploads/2022/07/bolognese-tasty.png?fit=1080%2C1080&ssl=1"
+    },
+    {
+      "id": "2",
+      "name": "Chicken Alfredo",
+      "price": 14.99,
+      "ingredients": [
+        "Fettuccine Pasta",
+        "Grilled Chicken",
+        "Alfredo Sauce",
+        "Garlic",
+        "Butter",
+        "Parmesan Cheese",
+        "Parsley"
+      ],
+      "imageLink": "https://img.freepik.com/free-photo/ai-generated-pasta_23-2150637314.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Vegetable Stir-Fry",
+      "price": 10.99,
+      "ingredients": [
+        "Mixed Vegetables",
+        "Tofu",
+        "Soy Sauce",
+        "Ginger",
+        "Garlic",
+        "Sesame Oil",
+        "Rice"
+      ],
+      "imageLink": "https://png.pngtree.com/png-vector/20210912/ourlarge/pngtree-stir-fried-spinach-png-image_3911746.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Margherita Pizza",
+      "price": 9.99,
+      "ingredients": [
+        "Pizza Dough",
+        "Tomatoes",
+        "Fresh Basil",
+        "Mozzarella Cheese",
+        "Olive Oil",
+        "Salt"
+      ],
+      "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsqdjdqtXvZAjtpoCR5iAImOateW6hNQ0eHg&usqp=CAU"
+    },
+    {
+      "id": "5",
+      "name": "Caesar Salad",
+      "price": 7.99,
+      "ingredients": [
+        "Romaine Lettuce",
+        "Croutons",
+        "Parmesan Cheese",
+        "Caesar Dressing"
+      ],
+      "imageLink": "https://www.nicepng.com/png/detail/37-370413_classic-caesar-salad-ensalada-cesar-fosters-hollywood.png"
+    },
+    {
+      "id": "6",
+      "name": "Beef Tacos",
+      "price": 11.99,
+      "ingredients": [
+        "Ground Beef",
+        "Taco Shells",
+        "Lettuce",
+        "Tomatoes",
+        "Cheese",
+        "Salsa",
+        "Sour Cream"
+      ],
+      "imageLink": "https://png.pngtree.com/png-vector/20230912/ourmid/pngtree-mexican-beef-tacos-with-vegetables-png-image_10016658.png"
+    }
+  ],
+  "user": [
+    {
+      "id": "1",
+      "username": "johndoe",
+      "email": "johndoe@example.com",
+      "password": "A1234",
+      "balance": 100,
+      "order": []
+    },
+    {
+      "id": "2",
+      "username": "janedoe",
+      "email": "janedoe@example.com",
+      "password": "5678",
+      "balance": 150,
+      "order": []
+    },
+    {
+      "id": "3",
+      "username": "user123",
+      "email": "user123@example.com",
+      "password": "1579",
+      "balance": 75,
+      "order": []
+    },
+    {
+      "id": "4",
+      "username": "webmaster",
+      "email": "webmaster@example.com",
+      "password": "84569",
+      "balance": 200,
+      "order": []
+    },
+    {
+      "id": "5",
+      "username": "alice_smith",
+      "email": "alice_smith@example.com",
+      "password": "458769",
+      "balance": 50,
+      "order": []
+    },
+    {
+      "id": "a0b5",
+      "username": "Albert",
+      "password": "hadjf",
+      "email": "hebibovsamir26@gmail.com",
+      "balance": "1000"
+    },
+    {
+      "id": "559c",
+      "username": "Albert",
+      "password": "salam ",
+      "email": "hebibovsamir26@gmail.com",
+      "balance": "1000"
+    },
+    {
+      "id": "d221",
+      "username": "alber",
+      "password": "",
+      "email": "",
+      "balance": ""
+    },
+    {
+      "id": "3c76",
+      "username": "albert",
+      "password": "",
+      "email": "",
+      "balance": ""
+    },
+    {
+      "id": "62a0",
+      "username": "sala",
+      "password": "",
+      "email": "",
+      "balance": ""
+    },
+    {
+      "id": "a6ec",
+      "username": "ksdfn",
+      "password": "",
+      "email": "",
+      "balance": ""
+    },
+    {
+      "id": "800e",
+      "username": "lsdkf",
+      "password": "dknfa",
+      "email": "hebibovsamir26@gmail.com",
+      "balance": "123231"
+    },
+    {
+      "id": "a63c",
+      "username": "aldjfn",
+      "password": "akdjfanjk",
+      "email": "hebibovsamir26@gmail.com",
+      "balance": "3132"
+    },
+    {
+      "id": "dfbb",
+      "username": "lylosasiv",
+      "password": "Pa$$w0rd!",
+      "email": "gyzufik@mailinator.com",
+      "balance": "85"
+    },
+    {
+      "id": "777b",
+      "username": "kawuvug",
+      "password": "Pa$$w0rd!",
+      "email": "jojytik@mailinator.com",
+      "balance": "57"
+    }
+  ]
+}

@@ -28,7 +28,7 @@ sortByName.addEventListener("click",function(){
                 <p class="card-text">Price: $${element.price}</p>
             </div>
             <div class="card-footer">
-                <a href="#" class="btn btn-primary">Add to card</a>
+                <a href="#" class="btn btn-primary" name="${element.id}">Add to card</a>
                 <a href="#" class="btn btn-outline-danger"><i class="fa-solid fa-trash deleteBtn"></i></a>
                 <a href="detail.html?=${element.id}" class="btn btn-outline-primary">Details</a>
             </div>
@@ -56,7 +56,7 @@ fetch(url)
                 <p class="card-text">Price: $${element.price}</p>
             </div>
             <div class="card-footer">
-                <a href="#" class="btn btn-primary basket" name="element.id">Add to card</a>
+                <a href="#" class="btn btn-primary basket" name="${element.id}">Add to card</a>
                 <a href="#" class="btn btn-outline-danger"><i class="fa-solid fa-trash deleteBtn"></i></a>
                 <a href="detail.html?=${element.id}" class="btn btn-outline-primary">Details</a>
             </div>
@@ -115,12 +115,17 @@ fetch(url)
         arr = [...basketArr];
     }
     for (let btn of basketBtns) {
-        btn.addEventListener("click", function() {
+        btn.addEventListener("click", function(e) {
+            e.preventDefault(); 
+            e.stopPropagation(); 
             let itemName = this.getAttribute("name");
+
             console.log(itemName);
             arr.push(data[+itemName - 1]);
             localStorage.setItem("basket", JSON.stringify(arr));
             console.log(arr);
+            console.log(basketArr.find(elem=> elem.id ==this.name));
+            
         });
     }
     

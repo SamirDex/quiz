@@ -1,0 +1,16 @@
+.container{
+    width: 70%;
+    border-radius: 2rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.productCount{
+    width: 5rem;
+    display: flex;
+}
+.increment, .decrement{
+    background-color: gray;
+    border-radius: 50%;
+}
+.increment i, .decrement i{
+    color: white;
+}

@@ -55,7 +55,7 @@ fetch(url)
                 <p class="card-text">${element.name} is <b>${element.nationality}</b></p>
             </div>
             <div class="card-footer">
-                <a href="detail.html?=${element}" class="btn btn-outline-primary">Details</a>
+                <a href="detail.html?id=${element.id}" class="btn btn-outline-primary">Details</a>
                 <a href="#" class="btn btn-outline-danger"><i class="fa-solid fa-trash deleteBtn"></i></a>
             </div>
         </div>`;
@@ -157,6 +157,7 @@ fetch(url)
         })
     }
     
+
 });
 
 

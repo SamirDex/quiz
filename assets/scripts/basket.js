@@ -33,8 +33,20 @@ arr.forEach(element=>{
             <button style="color:red;" class="removeBtn">Remove</button>
         </td>
     </tr>`
-    totalSum += sum; 
 })
+totalPrice.innerHTML = `$${totalSum.toFixed(2)}`;
+updateTotal()
+// Toplam fiyatı güncelleyici fonksiyon
+function updateTotal() {
+    totalSum = 0; // Toplamı sıfırla
+    tbody.querySelectorAll('tr').forEach(row => {
+        let count = parseInt(row.querySelector('.count').textContent);
+        let price = parseFloat(row.querySelector('td:nth-child(4)').textContent.replace('$', ''));
+        totalSum += count * price;
+    });
+    totalPrice.innerHTML = `$${totalSum.toFixed(2)}`;
+}
+
 let Decrement =document.querySelectorAll(".Decrement"); 
 let Increment =document.querySelectorAll(".Increment"); 
 
@@ -43,8 +55,9 @@ for(let btn of Decrement){
         console.log(this.previousElementSibling.textContent++);
 
         basketArr[this.getAttribute("name") - 1].count = this.previousElementSibling.textContent; 
-        localStorage.setItem("basket", JSON.stringify(basketArr))
-    })
+        localStorage.setItem("basket", JSON.stringify(basketArr)); 
+        updateTotal();
+    }) 
 }
 
 for(let btn of Increment){
@@ -54,6 +67,7 @@ for(let btn of Increment){
 
             basketArr[this.getAttribute("name") - 1].count = this.nextElementSibling.textContent; 
             localStorage.setItem("basket", JSON.stringify(basketArr))
+            updateTotal();
 
         }
         else{
@@ -69,6 +83,8 @@ for(let btn of Increment){
                 showConfirmButton: false,
                 timer: 1500
             });
+            updateTotal();
+
         }
         
     })
@@ -86,7 +102,9 @@ for(let btn of removeBtns){
             showConfirmButton: false,
             timer: 1500
           });
+        updateTotal();
     }) 
+
 }
 
 removeAllBtn.addEventListener("click", function() {
@@ -101,7 +119,8 @@ removeAllBtn.addEventListener("click", function() {
       }).then((result) => {
         if (result.isConfirmed) {
             tbody.innerHTML= ''; 
-            localStorage.clear(); 
+            localStorage.clear();
+            updateTotal(); 
           Swal.fire({
             title: "Deleted!",
             text: "Your file has been deleted.",
@@ -111,4 +130,3 @@ removeAllBtn.addEventListener("click", function() {
       });
 
 })
-totalPrice.innerHTML= `$${totalSum.toFixed(2)}`;  

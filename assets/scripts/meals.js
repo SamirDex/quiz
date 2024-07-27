@@ -41,8 +41,6 @@ sortByName.addEventListener("click",function(){
 fetch(url)
   .then((res) => res.json())
   .then((data) => {
-    console.log("object");
-    console.log(data);
     data.forEach((element) => {
       cards.innerHTML += `
         <div class="card" style="width: 18rem;">
@@ -160,21 +158,31 @@ fetch(url)
     }
 
 
-    let basketBtns = document.querySelectorAll("basket"); 
+    let basketBtns = document.querySelectorAll(".basket");
 
-    let basketArr = []; 
-    let basketArrLocal = JSON.parse(localStorage.getItem("basket")); 
-    if(basketArrLocal){
-        basketArr = [...basketArrLocal]; 
+    let basketArr = [];
+
+    let localBasketArr = JSON.parse(localStorage.getItem("basket"));
+
+    if (localBasketArr) {
+        basketArr = [...localBasketArr];
     }
 
-    for(let btn of basketBtns){
-        btn.addEventListener("click", function(e){
-            e.preventDefault(); 
-            e.stopPropagation(); 
-            console.log(this.name);
-        })
+    for (let basketBtn of basketBtns) {
+        basketBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+        console.log(this.name);
+        if (basketArr.find((elem) => elem.id == this.name)) {
+            basketArr[+this.name - 1].count++;
+            localStorage.setItem("basket", JSON.stringify(basketArr));
+        } else {
+            data[+this.name - 1].count = 1;
+
+            basketArr.push(data[+this.name - 1]);
+            localStorage.setItem("basket", JSON.stringify(basketArr));
+        }
+        });
     }
-    
-    
 });
+    

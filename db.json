@@ -255,6 +255,20 @@
       "password": "hebibovs13",
       "email": "hebibovsamir26@gmail.com",
       "balance": "1000"
+    },
+    {
+      "id": "ab3f",
+      "username": "albert ",
+      "password": "salamaleykum ",
+      "email": "hebibovsamir26@gmail.com",
+      "balance": "10000"
+    },
+    {
+      "id": "0fd5",
+      "username": "Albert",
+      "password": "salazar",
+      "email": "hebibovsamir26@gmail.com",
+      "balance": "10000"
     }
   ]
 }

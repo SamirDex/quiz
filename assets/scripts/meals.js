@@ -48,7 +48,6 @@ fetch(url)
         <div class="card" style="width: 18rem;">
         <i class="fa-regular fa-heart favIcon" name=${element.id}></i>
             <div class="card-image">
-
                 <img src="${element.imageLink}" class="card-img-top" alt="">
             </div>
             <div class="card-body">
@@ -58,7 +57,7 @@ fetch(url)
             <div class="card-footer">
                 <a href="#" class="btn btn-primary basket" name="${element.id}">Add to card</a>
                 <a href="#" class="btn btn-outline-danger"><i class="fa-solid fa-trash deleteBtn"></i></a>
-                <a href="detail.html?=${element.id}" class="btn btn-outline-primary">Details</a>
+                <a href="detail.html?id=${element.id}" class="btn btn-outline-primary">Details</a>
             </div>
         </div>`;
         
@@ -106,33 +105,74 @@ fetch(url)
     }
 
 
+    let favIcons = document.querySelectorAll(".favIcon");
 
-    let basketBtns = document.querySelectorAll(".basket");
-    let basketArr = []; 
-    let localBasketArr = JSON.parse(localStorage.getItem("basket")); 
+    let arr = [];
 
-    if(localBasketArr){
-        basketArr = [...localBasketArr]; 
+    let favIconArr = JSON.parse(localStorage.getItem("favmeal"));
+    //   console.log(favIconArr);
+
+    if (favIconArr) {
+      arr = [...favIconArr];
     }
-    
 
-    for(let basketBtn of basketBtns){
-        basketBtn.addEventListener("click",function(e) {
+    for (let icon of favIcons) {
+        for (let elem of arr) {
+
+            if (icon.getAttribute("name") == elem.id) {
+                icon.classList.add("fa-solid");
+                icon.classList.remove("fa-regular");
+            }
+        }
+        icon.addEventListener("click", function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+            if (this.classList.contains("fa-solid")) {
+                this.classList.add("fa-regular");
+                this.classList.remove("fa-solid");
+
+                arr = arr.filter((elem) => elem.id != this.getAttribute("name"));
+                localStorage.setItem("fav", JSON.stringify(arr));
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Added to wishlist",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            }
+            else {
+                this.classList.remove("fa-regular");
+                this.classList.add("fa-solid");
+
+                arr.push(data[+this.getAttribute("name") - 1]);
+
+                localStorage.setItem("favmeal", JSON.stringify(arr));
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Added to wishlist",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            }
+        });
+    }
+
+
+    let basketBtns = document.querySelectorAll("basket"); 
+
+    let basketArr = []; 
+    let basketArrLocal = JSON.parse(localStorage.getItem("basket")); 
+    if(basketArrLocal){
+        basketArr = [...basketArrLocal]; 
+    }
+
+    for(let btn of basketBtns){
+        btn.addEventListener("click", function(e){
             e.preventDefault(); 
             e.stopPropagation(); 
             console.log(this.name);
-
-
-            if(basketArr.find(elem=> elem.id == this.name)){
-                console.log("first");
-                basketArr[+this.name-1].count++; 
-                localStorage.setItem("basket", JSON.stringify(basketArr)); 
-            }
-            else{
-                data[+this.name-1].count = 1 ; 
-                basketArr.push(data[+this.name-1]); 
-                localStorage.setItem("basket",JSON.stringify(basketArr))
-            }
         })
     }
     

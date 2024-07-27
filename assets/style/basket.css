@@ -4,13 +4,39 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .productCount{
-    width: 5rem;
     display: flex;
 }
+.count{
+    margin:0  0.5rem;
+}
 .increment, .decrement{
+    margin: 0 .25rem;
     background-color: gray;
     border-radius: 50%;
 }
 .increment i, .decrement i{
     color: white;
+}
+.totalprice{
+    padding: 2rem;
+    width: 25%;
+    border-radius: 2rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    height: 10rem;
+}
+.outer-container{
+    display: flex;
+}
+.prodcuts {
+    writing-mode: 50%;
+    display: flex;
+}
+.totalProducts{
+    margin-right: 3rem;
+}
+.image{
+    width: 2rem;
+}
+.image img{
+    width: 100%;
 }

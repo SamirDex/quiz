@@ -248,6 +248,13 @@
       "password": "Pa$$w0rd!",
       "email": "jojytik@mailinator.com",
       "balance": "57"
+    },
+    {
+      "id": "9251",
+      "username": "Albert",
+      "password": "hebibovs13",
+      "email": "hebibovsamir26@gmail.com",
+      "balance": "1000"
     }
   ]
 }

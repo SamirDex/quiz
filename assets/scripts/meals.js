@@ -2,7 +2,7 @@ let cards = document.querySelector(".cards");
 let url = `http://localhost:3000/meals`;
 let sortByName = document.querySelector(".sortByName");
 let SearchInput = document.querySelector(".SearchInput");
-
+let removeAllBtn = document.querySelector(".removeAllBtn"); 
 
 
 
@@ -108,28 +108,33 @@ fetch(url)
 
 
     let basketBtns = document.querySelectorAll(".basket");
-    let arr = [];
-    let basketArr = JSON.parse(localStorage.getItem("basket"));
-    
-    if (basketArr) {
-        arr = [...basketArr];
+    let basketArr = []; 
+    let localBasketArr = JSON.parse(localStorage.getItem("basket")); 
+
+    if(localBasketArr){
+        basketArr = [...localBasketArr]; 
     }
-    for (let btn of basketBtns) {
-        btn.addEventListener("click", function(e) {
+    
+
+    for(let basketBtn of basketBtns){
+        basketBtn.addEventListener("click",function(e) {
             e.preventDefault(); 
             e.stopPropagation(); 
-            let itemName = this.getAttribute("name");
+            console.log(this.name);
 
-            console.log(itemName);
-            arr.push(data[+itemName - 1]);
-            localStorage.setItem("basket", JSON.stringify(arr));
-            console.log(arr);
-            console.log(basketArr.find(elem=> elem.id ==this.name));
-            
-        });
+
+            if(basketArr.find(elem=> elem.id == this.name)){
+                console.log("first");
+                basketArr[+this.name-1].count++; 
+                localStorage.setItem("basket", JSON.stringify(basketArr)); 
+            }
+            else{
+                data[+this.name-1].count = 1 ; 
+                basketArr.push(data[+this.name-1]); 
+                localStorage.setItem("basket",JSON.stringify(basketArr))
+            }
+        })
     }
     
+    
 });
-
-
-

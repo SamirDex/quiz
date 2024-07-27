@@ -87,7 +87,7 @@ fetch(url2 + "/" + id)
                             <p class="card-text" style="word-wrap:wrap;">${data.ingredients}</b></p>
                             <p>Price: ${data.price}</p>
                             <a href="./home.html" class="btn btn-primary">Home</a>
-                            <a class="btn btn-primary basket">Add to Card</a>
+                            <a class="btn btn-primary basket" name="${data.id}">Add to Card</a>
                         </div>
                         </div>`;
     let favIcons = document.querySelectorAll(".favIcon");
@@ -136,6 +136,32 @@ fetch(url2 + "/" + id)
                     timer: 1500
                   });
             }
+        });
+    }
+
+    let basketBtns = document.querySelectorAll(".basket");
+
+    let basketArr = [];
+
+    let localBasketArr = JSON.parse(localStorage.getItem("basket"));
+
+    if (localBasketArr) {
+        basketArr = [...localBasketArr];
+    }
+
+    for (let basketBtn of basketBtns) {
+        basketBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+        console.log(this.name);
+        if (basketArr.find((elem) => elem.id == this.getAttribute("name"))) {
+            basketArr[+this.this.getAttribute("name")-1].count++;
+            localStorage.setItem("basket", JSON.stringify(basketArr));
+        } else {
+            basketArr[+this.this.getAttribute("name") - 1] =1; 
+            basketArr.push(data[+this.getAttribute("name") - 1]);
+            localStorage.setItem("basket", JSON.stringify(basketArr));
+        }
         });
     }
 });
